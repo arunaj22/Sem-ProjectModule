@@ -1,0 +1,55 @@
+<section class="contact-form space mt-40 pb-40">
+	<div class="container w-set-small">
+		<div class="row">
+			<div class="col-sm-12 contact-block">
+				
+				<div class="col-sm-12 main-heading mt-40">
+					
+					<h2>Message</h2>
+					
+				</div>
+
+
+				<div class="form-group col-md-12 no-padding mt-20">
+					<div>
+						<p>
+							<strong>The exchange of personal information (including phone number, full , Facebook etc) is strictly forbidden.</strong>
+						</p>
+						<p class="mt-20">
+							The homeowner and the tradesman will receive each other’s contact info only when the homeowner pays the deposit to book the tradesman. All messages are verified for compliance with our <a href="<%= terms_path%>">Terms & Conditions</a>.
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="contact-form space-bottom">
+	<div class="container w-set-small">
+		<div class="row">
+			<div class="col-sm-12 contact-block">
+				<div class="col-sm-12 main-heading">
+					<h2>Send Message</h2>
+				</div>
+				<%= form_tag('/supports', method: :post) do %>
+					
+					
+					<div class="form-group">
+						<input type="text" class="form-control" name="title" id="title" placeholder="Title">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" name="website" id="website" placeholder="Subject">
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" name="comment" id="comment" placeholder="Message"></textarea>
+					</div>
+					<div class="form-group">
+						<%= submit_tag 'Send message', :class => 'btn set-btn-large'%>
+					</div>
+				<%end%>
+			</div>
+		</div>
+	</div>
+</section>

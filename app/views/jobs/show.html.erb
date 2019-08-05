@@ -1,0 +1,67 @@
+<section class="contact-form space mt-40">
+  <div class="container w-set-small">
+    <div class="row">
+      <div class="col-sm-12 contact-block">
+
+        <div class="col-sm-12 main-heading mt-40">
+          <span>ID : <%= @job.id%></span>
+          <h2><%= @job.location %> <small>(Posted by: <%= @job.user.name%>)</small></h2>
+          <p><%= @job.description %></p>
+        </div>
+
+        <div class="col-md-12">
+          <div class="col-md-3">
+            <img src="<%= asset_path('portfolio-9.jpg')%>">
+          </div>
+          <div class="col-md-3">
+            <img src="<%= asset_path('portfolio-10.jpg')%>">
+          </div>
+          <div class="col-md-3">
+            <img src="<%= asset_path('portfolio-11.jpg')%>">
+          </div>
+        </div>
+
+        <%unless user_signed_in?%>
+        <div class="form-group col-md-12 no-padding mt-20">
+          <label class="tradeCheckbox set-lab-detail">
+            <strong>Sign in to post a quote</strong><br>
+            <a href="<%= new_user_registration_path%>"><span>Don't have an account? Registration is free for all tradesmen.</span></a>
+            <div>   
+              <a href="<%= recent_jobs_path%>" class="btn set-btn-w-50">Back</a>
+              <%unless user_signed_in?%>
+              <a href="<%= new_user_session_path%>" class="btn set-btn-w-50">Sign In</a>
+              <%end%>
+            </div>
+          </label>
+        </div>
+        <%else%>
+
+        <div class="col-sm-12 main-heading">
+          <h4>Send Quote</h4>
+        </div>
+        <div class="col-md-12">
+          <%Message.where('job_id=?', @job.id).each do |u|%>
+            <p><b><%= @users[current_user.id]&.name%>:</b> <%= u.body%></p>
+            <p><b><%= @users[u.recipient_id]&.name%>:</b> <%= u.body%></p>
+          <%end%>
+        </div>
+        <%= form_tag('/messages', method: :post) do%> 
+        <div class="form-group">
+          <%= text_area_tag 'body', '', class: 'form-control'%>
+        </div>
+
+        <%= hidden_field_tag 'user_id', '', value: @job.user_id%>
+
+        <%= hidden_field_tag 'job_id', '', value: @job.id%>
+
+        <%= hidden_field_tag 'recipient_id', '', value: current_user.id%>
+
+        <div class="form-group">
+          <%= submit_tag 'Send quote', :class => 'btn set-btn-large'%>
+        </div>
+        <%end%>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,172 @@
+
+<style type="text/css">
+	#homePickTrade,
+	.home h1 {
+		margin-bottom: 20px;
+	}
+	
+	.down {
+		left: 0;
+		margin-top: 60px;
+		width: 42%;
+	}
+	
+	.down:before {
+		content: "Choose location";
+		font-weight: 700;
+		display: block;
+		margin-bottom: 10px;
+	}
+	
+	.down {
+		bottom: auto;
+		top: 50%;
+	}
+	
+	#homePickLocation {
+		height: 52px;
+		width: 100%;
+		border-radius: 4px;
+		/*background: url(https://tradesman.ie/wp-content/uploads/2017/12/select.svg) top 7px right 20px no-repeat;*/
+		-webkit-background-size: 77px 33px;
+		background-size: 77px 33px;
+	}
+	
+	#homePickTrade {
+		height: 52px;
+		width: 100%;
+		font-size: 14px;
+		background-color: #EFBB20;
+		-webkit-background-size: 109px 20px;
+		background-size: 109px 20px;
+		border: 2px solid #EFBB20;
+		border-radius: 4px;
+		margin-top: 15px;
+		box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .16);
+	}
+	
+	#homePickTrade,
+	.home h1 {
+		margin-bottom: 20px;
+	}
+	
+	#faq .sides>div,
+	.btn,
+	.commentlist .comment,
+	.hentry.job,
+	.section__media__files span.single-photo,
+	.theLabel,
+	a,
+	button,
+	input[type=email],
+	input[type=number],
+	input[type=password],
+	input[type=submit],
+	input[type=text],
+	select,
+	textarea {
+		transition: all .2s ease-in-out!important;
+		cursor: pointer;
+	}
+	
+	.mt-40 {
+		margin-top: 40px;
+	}
+	
+	.home4 .header2 .gp-megamenu-parent>li>a:hover {
+		opacity: 0.8;
+	}
+</style>
+
+
+
+<!--Banner-->
+<section id="banner2" class="height center">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 banner-text">
+				<h5>Qualified Tradesman in your Area</h5>
+				<h2 id="spin"></h2>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
+				<!-- <a href="#" class="btn">Buy now!</a> -->
+			</div>
+
+		</div>
+		<div class="down">
+			<select id="homePickLocation">
+				<option selected="true" value="Dublin">Dublin</option>
+				<option value="Antrim">Antrim</option>
+				<option value="Armagh">Armagh</option>
+				<option value="Carlow">Carlow</option>
+				<option value="Cavan">Cavan</option>
+				<option value="Clare">Clare</option>
+				<option value="Cork">Cork</option>
+				<option value="Derry">Derry</option>
+				<option value="Donegal">Donegal</option>
+				<option value="Down">Down</option>
+				<option value="Fermanagh">Fermanagh</option>
+				<option value="Galway">Galway</option>
+				<option value="Kerry">Kerry</option>
+				<option value="Kildare">Kildare</option>
+				<option value="Kilkenny">Kilkenny</option>
+				<option value="Laois">Laois</option>
+				<option value="Leitrim">Leitrim</option>
+				<option value="Limerick">Limerick</option>
+				<option value="Longford">Longford</option>
+				<option value="Louth">Louth</option>
+				<option value="Mayo">Mayo</option>
+				<option value="Meath">Meath</option>
+				<option value="Monaghan">Monaghan</option>
+				<option value="Offaly">Offaly</option>
+				<option value="Roscommon">Roscommon</option>
+				<option value="Sligo">Sligo</option>
+				<option value="Tipperary">Tipperary</option>
+				<option value="Tyrone">Tyrone</option>
+				<option value="Waterford">Waterford</option>
+				<option value="Westmeath">Westmeath</option>
+				<option value="Wexford">Wexford</option>
+				<option value="Wicklow">Wicklow</option>
+			</select>
+			<%= select_tag 'lesson_id', options_for_select(Lesson.all.map {|u| ["#{u.vehicle_type} - $#{u.fee} - #{u.meeting_point}", u.id]}), {:include_blank => "Select service type", id: 'homePickTrade'} %>
+			<p id="howFree">
+				It's free. <a href="#servicescarp">Really?</a>
+			</p>
+		</div>
+
+	</div>
+</section>
+<!--Action-->
+
+
+<!--Services-->
+<section id="single-service">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-sm-9 ss-block">
+
+				<div class="col-sm-12 no-padding service-detail">
+					<div class="no-padding col-sm-12 margin-top-50">
+						<h2>We connect homeowners and tradesmen</h2>
+						<p>And we're the best in Ireland at doing it. We are big and reliable - with over 6,000 active tradesmen ready to quote you.</p>
+					</div>
+					<ul class="mt-20 pl-30">
+						<li><i class="fa fa-caret-right mr-20"></i>Free to post your job and get quotes</li>
+						<li><i class="fa fa-caret-right mr-20"></i>80% of jobs get 3 quotes on the same day</li>
+						<li><i class="fa fa-caret-right mr-20"></i>Tradesmen have profiles and ratings</li>
+					</ul>
+					<div class="col-md-4 mt-20 mb-20">
+						<a href="postjob.html" class="btn">Find Tradesman for free</a>
+					</div>
+					<div class="col-md-4 mt-20 mb-20">
+						<a href="registeration.html" class="btn">Tradesman Registeration</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+

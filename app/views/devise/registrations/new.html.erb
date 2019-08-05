@@ -1,0 +1,52 @@
+<section class="contact-form space mt-40">
+  <div class="container w-set-small">
+    <div class="row">
+      <div class="col-sm-12 contact-block">
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="col-sm-12 main-heading">
+          <h2>Register Here</h2>
+        </div>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="form-group col-md-12 no-padding">
+          <%= f.text_field :name, autofocus: true, autocomplete: "Name", placeholder: 'Name', class: "form-control" %>
+        </div>
+        <div class="form-group col-md-12 no-padding">
+          <%= f.date_field :dob, autofocus: true, autocomplete: "dob", placeholder: 'Date of birth', class: "form-control" %>
+        </div>
+        <div class="form-group col-md-12 no-padding">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: "form-control" %>
+        </div>
+        <div class="form-group col-md-12 no-padding">
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password', class: "form-control" %>
+        </div>
+        <div class="form-group col-md-12 no-padding">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirm password', class: "form-control" %>
+        </div>
+        
+        <%if session[:tradesman]%>
+          <%= f.hidden_field :role, value: 'tradesman'%>
+        <%else%>
+          <%= f.hidden_field :role, value: 'user'%>
+        <%end%>
+        
+        <div class="form-group col-sm-12 button no-padding">
+         <%= f.submit "Sign up", class: 'btn set-btn-large' %>
+       </div>
+       <div class="form-group col-md-12 no-padding">
+        <div class="col-md-8">
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "Lost Password?", new_password_path(resource), class: 'loss-pass-set' %>
+          <% end %>
+        </div>
+        <div class="col-md-4">
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <%= link_to "Register", new_registration_path(resource), class: 'set-sign-up-btn' %>
+          <% end %>
+        </div>
+      </div>
+
+      <%end%>
+    </div>
+  </div>
+</div>
+</section>

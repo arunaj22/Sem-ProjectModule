@@ -1,0 +1,70 @@
+<!--header-->
+<header id="gp-header" class="transparent header2" data-spy="affix" data-offset-top="1">
+	<div class="container">
+		<div class="row">
+			<div id="gp-logo" class="col-sm-3 col-md-3 col-xs-10">
+				<a class="logo" href="<%= root_url%>"><img src="<%= asset_path('logo.png')%>" style="height:inherit;"></a>
+			</div>
+			<div id="gp-menu" class="col-sm-9 col-md-9 col-xs-2">
+				<a id="offcanvas-toggler" href="#"><i class="fa fa-bars"></i></a>
+				<ul class="gp-megamenu-parent menu-fade-up hidden-xs">
+
+					<li><a href="<%= new_job_path%>">Post a job</a>
+					</li>
+					<li><a href="<%= recent_jobs_path%>">Recent Jobs</a>
+					</li>
+					<% unless user_signed_in?%>
+					<li><a href="<%= new_user_registration_path(tradesman: session[:tradesman]=true)%>">Tradesman Registeration <span>free</span></a>
+					</li>
+					<%end%>
+					<li><a href="<%= terms_path%>">T & C</a>
+					</li>
+					<li><a href="<%= support_path%>">Support</a>
+					</li>
+					<li>
+						<% if user_signed_in?%>
+							<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+						<%else%>
+							<a href="<%= new_user_session_path%>">Sign In</a>
+						<%end%>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+<!--Side Menu-->
+<div class="offcanvas-menu">
+	<a href="#" class="close-offcanvas"><i class="fa fa-remove"></i></a>
+	<div class="offcanvas-inner">
+		<div class="gp-module ">
+			<a class="logo" href="index.html"><h1><i class="icon icon-basic-home"></i> Your Logo</h1></a>
+			<div class="gp-module-content">
+				<ul class="nav menu">
+					<li class="item-166 deeper parent"><a href="<%= new_job_path%>">Post a job</a>
+					</li>
+					<li class="item-166 deeper parent"><a href="<%= jobs_path%>">Recent Jobs</a>
+					</li>
+					<% unless user_signed_in?%>
+					<li class="item-166 deeper parent"><a href="<%= new_user_registration_path(tradesman: session[:tradesman]=true)%>">Tradesman Registeration <span>free</span></a>
+					<%end%>
+					</li class="item-166 deeper parent">
+					<li class="item-166 deeper parent"><a href="<%= terms_path%>">T & C</a>
+					</li>
+					<li class="item-166 deeper parent"><a href="<%= support_path%>">Support</a>
+					</li>
+					<li class="item-166 deeper parent">
+						<% if user_signed_in?%>
+							<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+						<%else%>
+							<a href="<%= new_user_session_path%>">Sign In</a>
+						<%end%>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

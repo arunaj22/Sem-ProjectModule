@@ -1,0 +1,236 @@
+/*
+ Project Name : Builder
+ Author Company : Grow Scales
+ Project Date: 08 May, 2017
+ Project Developer : sufyan319@outlook.com
+ */
+
+a {
+    color: #EFBB20;
+}
+
+.btn {
+    background-color: #EFBB20;
+    border: 2px solid #EFBB20;
+}
+#banner-action .banner-text > h2 {
+    color: #efbb20;
+}
+#banner-action .banner-text > h5 {
+    border: 1px solid #efbb20;
+}
+.simple {
+    color: #EFBB20;
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #EFBB20!important;
+    box-shadow: 0 0 6px #EFBB20!important;
+}
+
+.yellow-overlay::before {
+    background-color: rgba(239, 187, 32, 0.9);
+}
+
+ul.social-icons > li a {
+    background-color: #EFBB20;
+    border: 2px solid #EFBB20;
+    color: #EFBB20;
+}
+
+ul.social a,
+.service-block .simple{
+    background-color: #efbb20;
+}
+
+ul.social-icons > li a:hover {
+    background-color: #EFBB20;
+    border: 2px solid #EFBB20;
+    color: #EFBB20 !important;
+}
+
+.gp-pagination .pagination li a:hover {
+    background-color: #EFBB20;
+}
+
+#accordion .panel-title a {
+    background-color: #EFBB20;
+}
+
+#faq .cbp-caption svg {
+    background-color: #efbb20;
+}
+
+#loading {
+    background-color: #EFBB20;
+}
+
+#topbar .topbar-block.left ul li i {
+    color: #efbb20;
+}
+
+#topbar .topbar-block.left ul li,
+#topbar .topbar-block.left ul li a {
+    color: #EFBB20;
+}
+
+#topbar ul li:hover a i {
+    color: #EFBB20;
+}
+
+#gp-header.affix {
+    background-color: #efbb20!important;
+}
+
+#gp-logo h1 i {
+    color: #efbb20;
+}
+
+.offcanvas-menu .logo i {
+    color: #efbb20;
+}
+
+#gp-header {
+    background: #efbb20 none repeat scroll 0 0;
+}
+
+.gp-megamenu-parent .dropdown .dropdown-menu {
+    background: #efbb20 none repeat scroll 0 0;
+}
+
+.gp-megamenu-parent > li > a::before {
+    background-color: #efbb20;
+}
+
+.close-offcanvas {
+    background: #efbb20 none repeat scroll 0 0;
+}
+
+.header3 #gp-logo h1 i {
+    color: #efbb20;
+}
+
+#gp-menu .mega .mega-submenu {
+    background-color: #EFBB20;
+}
+
+#banner2 .banner-text h2 {
+    color: #efbb20;
+}
+
+#breadcrumb {
+    background: #EFBB20 none repeat scroll 0 0;
+}
+
+.action {
+    background-color: #efbb20;
+}
+
+.service-image .hover {
+    background-color: rgba(239, 187, 32, 0.6);
+}
+
+#about .about-list:hover .sppb-icon {
+    background-color: #EFBB20;
+}
+
+.cbp-l-filters-alignRight .cbp-filter-item.cbp-filter-item-active,
+.cbp-l-filters-alignRight .cbp-filter-item:hover {
+    background-color: #efbb20;
+    border-color: #efbb20;
+}
+
+#about .about-block h3 {
+    color: #EFBB20;
+}
+
+.about-list .gp-icon {
+    background-color: #efbb20;
+}
+
+#single-project .meta-data li i {
+    color: #efbb20;
+}
+
+#coming-soon {
+    background-color: #EFBB20;
+}
+
+.single-blog .blog-date .socials li a:hover {
+    color: #EFBB20;
+}
+
+.comment-block li a:hover {
+    color: #EFBB20;
+}
+
+.widget.archive li a:hover,
+.widget.tags li a:hover {
+    color: #EFBB20;
+}
+
+aside .socials li a {
+    background-color: #EFBB20;
+}
+
+aside .socials li a:hover {
+    color: #EFBB20;
+}
+
+
+.feedback_info h4 {
+    color: #EFBB20;
+}
+
+footer .footer-block h3 {
+    color: #efbb20;
+}
+
+footer .footer-block a:hover {
+    color: #EFBB20;
+}
+
+.footer-block form#contact-form .btn {
+    background-color: #efbb20;
+}
+
+.copyright-block li a:hover {
+    color: #EFBB20;
+}
+
+.contact-block ul.address li i {
+    color: #efbb20;
+}
+
+#contact .sppb-person-social li a {
+    border: 1px solid #EFBB20;
+    color: #EFBB20;
+}
+
+aside .service li {
+    background-color: #EFBB20;
+}
+
+aside .service li a:hover,
+aside .service li a:focus {
+    background-color: #EFBB20;
+    color: #EFBB20;
+}
+
+aside .address li i {
+    color: #EFBB20;
+}
+
+aside.sidebar .widget.tag-blog ul li a {
+    border: 1px solid #EFBB20;
+    color: #EFBB20;
+}
+
+@media (max-width: 767px) {
+    #gp-header.transparent {
+        background-color: #efbb20;
+    }
+}

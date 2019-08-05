@@ -1,0 +1,23 @@
+<section class="contact-form space mt-40">
+  <div class="container w-set-small">
+    <div class="row">
+      <div class="col-sm-12 contact-block">
+        <div class="col-sm-12 main-heading">
+          <h2>Forgot your password?</h2>
+        </div>
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="form-group col-md-12 padding-left">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: "form-control" %>
+        </div>
+        
+        <div class="form-group col-sm-12 button no-padding">
+         <%= f.submit "Send me reset password instructions", class: 'btn set-btn-large' %>
+       </div>
+      </div>
+
+      <%end%>
+    </div>
+  </div>
+</div>
+</section>

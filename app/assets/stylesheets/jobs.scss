@@ -1,0 +1,14 @@
+// Place all the styles related to the Jobs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.no-padding{
+	margin-left: 5px;
+  margin-right: 5px;
+  width: -webkit-fill-available;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+	background-color: #efbc43!important;
+  border-color: #efbc43!important;
+}

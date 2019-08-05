@@ -1,0 +1,40 @@
+<section class="contact-form space mt-40">
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-sm-12 contact-block">
+        <div class="col-sm-12 main-heading">
+          <h2>Recent jobs</h2>
+        </div>
+        <p>Below you can see some of our most recent jobs.</p>
+        <p>By registering for an account you can find and quote jobs for your trade in your area.</p>           
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="col-sm-12 blog-list no-padding">
+          <% @jobs.each do |job| %>
+            <article class="col-sm-12 news-block no-padding">
+              <div class="inner">
+              <div class="article-info">
+                <h3 class="article-title">
+                <a href="jobs-detail.html" target="_parent"><%= job.address%>, <%= job.location%></a></h3>
+                <ul class="meta">
+                  <li> <i class="fa fa-calendar"></i>
+                    <span class="sppb-meta-date">Posted on <%= job.created_at.strftime("%d %b")%></span></li>
+                  </ul>
+                  <p><%= job.description%></p>
+                  <a href="<%= job_details_path(job)%>" class="btn btn-set-recent-job">View Job & Quote</a>
+                </div>
+              </div>
+            </article>
+          <%end%>
+        </div>
+        <div class="col-sm-12 no-padding text-center mt-40">
+          <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

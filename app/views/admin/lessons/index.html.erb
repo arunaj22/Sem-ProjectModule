@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'New Lesson', new_admin_lesson_path, class: 'btn btn-primary btn-sm' %>
+<h1>Lessons</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Vehicle type</th>
+      <th>Fee</th>
+      <th>Date</th>
+      <th>Meeting point</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lessons.each do |lesson| %>
+      <tr>
+        <td><%= lesson.vehicle_type%></td>
+        <td>$<%= lesson.fee%></td>
+        <td><%= lesson.date%></td>
+        <td><%= lesson.meeting_point%></td>
+        <td><%= link_to 'Edit', edit_admin_lesson_path(lesson) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

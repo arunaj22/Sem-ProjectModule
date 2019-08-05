@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2019-08-04
+  fee: 1.5
+  meeting_point: MyString
+  vehicle_type: MyString
+
+two:
+  date: 2019-08-04
+  fee: 1.5
+  meeting_point: MyString
+  vehicle_type: MyString

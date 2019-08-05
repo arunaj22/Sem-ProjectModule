@@ -1,0 +1,18 @@
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Tradesman-Admin</h3>
+  </div>
+
+  <ul class="list-unstyled components">
+
+    <li class="<%= 'active' if current_page?(admin_dashboard_url) %>"><a href="<%= admin_dashboard_url %>">Dashboard</a></li>
+    <li class="<%= 'active' if current_page?(admin_lessons_url) %>"><a href="<%= admin_lessons_url %>">Lessons</a></li>
+    <li class="<%= 'active' if current_page?(admin_bookings_url) %>"><a href="<%= admin_bookings_url %>">Bookings</a></li>
+    <li style="position: absolute;bottom: 20px;left: 30px;">
+      <%if user_signed_in?%>
+        <p style="color: #000;font-size: 12px;">Signed in as:<br/> <%= current_user.email%></p>
+        <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'btn btn-danger btn-xs' %>
+      <%end%>
+    </li>
+  </ul>
+</nav>

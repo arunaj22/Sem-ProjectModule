@@ -1,0 +1,36 @@
+<section class="contact-form space mt-40">
+  <div class="container w-set-small">
+    <div class="row">
+      <div class="col-sm-12 contact-block">
+        <%#= render "devise/shared/error_messages", resource: resource %>
+        <div class="col-sm-12 main-heading">
+          <h2>Login Here</h2>
+        </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group col-md-12 no-padding">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", required: true %>
+        </div>
+        <div class="form-group col-md-12 no-padding">
+          <%= f.password_field :password, autocomplete: "current-password", class: 'form-control', required: true %>
+        </div>
+        <div class="form-group col-sm-12 button no-padding">
+         <%= f.submit "Log in", class: 'btn set-btn-large' %>
+       </div>
+       <div class="form-group col-md-12 no-padding">
+        <div class="col-md-8">
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "Lost Password?", new_password_path(resource), class: 'loss-pass-set' %>
+          <% end %>
+        </div>
+        <div class="col-md-4">
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <%= link_to "Register", new_registration_path(resource), class: 'set-sign-up-btn' %>
+          <% end %>
+        </div>
+      </div>
+
+      <%end%>
+    </div>
+  </div>
+</div>
+</section>
