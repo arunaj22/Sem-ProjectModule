@@ -40,11 +40,11 @@
           <h4>Send Quote</h4>
         </div>
         <div class="col-md-12">
-          <%Message.where('job_id=?', @job.id).each do |u|%>
-            <% if current_user.id == u.user_id%>
-            <p><b><%= @users[current_user.id]&.name%>:</b> <%= u.body%></p>
-            <% end %>
+          <%Message.where('job_id=? and recipient_id=?', @job.id, current_user.id).order(created_at: :desc).each do |u|%>
             <p><b><%= @users[u.recipient_id]&.name%>:</b> <%= u.body%></p>
+          <%end%>
+          <%Message.where('job_id=? and recipient_id !=?', @job.id, current_user.id).order(created_at: :desc).each do |u|%>
+            <p><b><%= @users[u.user_id]&.name%>:</b> <%= u.body%></p>
           <%end%>
         </div>
         <%= form_tag('/messages', method: :post) do%> 
